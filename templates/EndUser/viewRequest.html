@@ -1,0 +1,121 @@
+{% extends 'MasterLayout/baseLayout.html' %}
+
+{% block penalty %}
+ <li class="nav-item active">
+                <a class="nav-link" href="">Total Penalty : {{ userProfile.totalPenalty }} <span class="sr-only">(current)</span></a>               
+              </li>
+            {%  endblock%}
+
+{% block rightbar %}
+
+              <div class ="profImg">     
+                    <img  src="/media/{{ userProfile.profile_pic }}" style="width:50px" alt="{{ user }}"/>
+                    {% if user.is_authenticated %}
+                    </div> 
+                    <div class="dropdown">
+                    <!-- <a class="nav-link" href="{% url 'login:logout' %}">Logout</a>
+                      {% else %}
+                    <a class="nav-link" href="{% url 'login:user_login' %}">Login</a>
+                      {% endif %}
+   -->
+                    
+                    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="color: white"></button>
+                    <!-- <span class="caret"></span></button> -->
+                    <ul class="dropdown-menu">
+                    {% if user.is_authenticated %}
+                      <li><a class="nav-link" href="{% url 'login:logout' %}">Logout</a></li>
+                      <li><a class="nav-link" href="#">Hello, {{ user.username }}</a></li>
+                    {% else %}
+                      <li><a class="nav-link" href="{% url 'login:user_login' %}">Login</a></li>
+                      <li><a class="nav-link" href="#">Hello, {{ user.username }}</a></li>
+                    {% endif %}
+                    </ul>
+</div>
+            {%  endblock%}
+
+{% block body %}
+
+  <div class="container">
+    <br>
+
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Request No</th>
+        <th>Equipment</th>
+        <th>Quantity</th>
+        <!--<th>Username</th>-->
+        <th>Date of Request</th>
+        <th>Date of Approval</th>
+        <th>Expected Return Date</th>
+        <th>Actual Return Date</th>
+        <th>Penalty Levied</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for request in lstRequest %}
+
+      <tr>
+        <td>{{ request.reqId }}
+        <td>{{ request.eqp.eqpName }}</td>
+        <td>{{ request.quantity }} </td>
+        <!--<td>{{ request.user.username }}</td>-->
+        <td>{{ request.dtOfRequest.date }}</td>
+        <td>
+            {% if request.dtAvailed.date == None %}
+                NA
+            {% else %}
+                {{ request.dtAvailed.date }}
+            {% endif %}
+        </td>
+        <td>
+            {% if request.dtAvailed.date == None %}
+                NA
+            {% else %}
+                {{ request.dtOfExpRet.date }}
+            {% endif %}
+        </td>
+        <td>{% if request.dtAvailed.date == None %}
+                NA
+            {% else %}
+                {{ request.dtOfActualRet.date }}
+            {% endif %}
+        </td>
+        <td>{% if request.dtAvailed.date == None %}
+                NA
+            {% else %}
+                {{ request.penalty }}
+            {% endif %}
+        </td>
+
+        <td>
+            {% if request.reqStatus == 0 %}
+                <a href="#" class="btn btn-warning btn-sm" role="button" aria-pressed="true" style="font-size: 14px"> Pending </a>
+
+            {% elif request.reqStatus == 1 %}
+                <a href="#" class="btn btn-success btn-sm" role="button" aria-pressed="true"style="font-size: 14px" > Approved </a>
+
+            {% elif request.reqStatus == 2 %}
+                <a href="#" class="btn btn-danger btn-sm" role="button" aria-pressed="true" style="font-size: 14px"> Rejected </a>
+
+            {% else %}
+                <a href="#" class="btn btn-primary btn-sm" role="button" aria-pressed="true" style="font-size: 14px"> Item Returned </a>
+
+            {% endif %}
+        </td>
+
+
+      </tr>
+
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+
+  </div>
+
+{% endblock %}
