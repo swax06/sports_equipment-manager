@@ -32,6 +32,10 @@ urlpatterns = [
     # Return API response
     path(r'getAllEqps/',apiviews.getAllEqps,name='getAllEqps'),
     path(r'getAllEqpReqs/',apiviews.getAllEqpReqs,name='getAllEqpReqs'),
-    path(r'checkAvailability/<reqId>',apiviews.checkAvailability,name='checkAvailability')
+    path(r'checkAvailability/<reqId>',apiviews.checkAvailability,name='checkAvailability'),
     # API response
+    
+    #for ground
+    path(r'addGround/',views.addGround,name='addGround'),
+    path(r'groundRequests/',views.groundRequests,name='groundRequests')
 ]

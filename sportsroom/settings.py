@@ -41,8 +41,19 @@ INSTALLED_APPS = [
     'rest_framework',
     # 'corsheaders',
     'login',
-    'sportsEquipment.apps.SportsEquipmentConfig', 
+    'sportsEquipment.apps.SportsEquipmentConfig',
+    'django_apscheduler', 
 ]
+
+SCHEDULER_CONFIG = {
+    "apscheduler.jobstores.default": {
+        "class": "django_apscheduler.jobstores:DjangoJobStore"
+    },
+    'apscheduler.executors.processpool': {
+        "type": "threadpool"
+    },
+}
+SCHEDULER_AUTOSTART = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
