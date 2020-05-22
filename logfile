@@ -11325,3 +11325,218 @@ django.db.utils.OperationalError: database is locked
 [22/May/2020 10:40:10] INFO [django.server:154] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0 basehttp.py
 [22/May/2020 10:40:10] INFO [django.server:154] "GET /admin/jsi18n/ HTTP/1.1" 200 3185 basehttp.py
 [22/May/2020 10:40:10] INFO [django.server:154] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331 basehttp.py
+[22/May/2020 16:32:52] INFO [django.server:154] "GET / HTTP/1.1" 200 3479 basehttp.py
+[22/May/2020 16:32:52] INFO [django.server:154] "GET /static/css/style.css HTTP/1.1" 200 248 basehttp.py
+[22/May/2020 16:32:52] INFO [django.server:154] "GET /media/images/4.jpeg HTTP/1.1" 200 14876 basehttp.py
+[22/May/2020 16:32:52] INFO [django.server:154] "GET /media/images/3.jpg HTTP/1.1" 200 55418 basehttp.py
+[22/May/2020 16:32:52] INFO [django.server:154] "GET /media/profile_pics/IIIT-B_logo%20copy.jpg HTTP/1.1" 200 10734 basehttp.py
+[22/May/2020 16:32:52] INFO [django.server:154] "GET /media/images/2.png HTTP/1.1" 200 807651 basehttp.py
+[22/May/2020 16:32:53] WARNING [django.request:228] Not Found: /favicon.ico log.py
+[22/May/2020 16:32:53] WARNING [django.request:228] Not Found: /favicon.ico log.py
+[22/May/2020 16:32:53] WARNING [django.server:154] "GET /favicon.ico HTTP/1.1" 404 4064 basehttp.py
+[22/May/2020 16:33:00] INFO [django.server:154] "GET /admin HTTP/1.1" 301 0 basehttp.py
+[22/May/2020 16:33:00] INFO [django.server:154] "GET /admin/ HTTP/1.1" 302 0 basehttp.py
+[22/May/2020 16:33:00] INFO [django.server:154] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1819 basehttp.py
+[22/May/2020 16:33:00] INFO [django.server:154] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17976 basehttp.py
+[22/May/2020 16:33:00] INFO [django.server:154] "GET /static/admin/css/login.css HTTP/1.1" 200 1203 basehttp.py
+[22/May/2020 16:33:01] INFO [django.server:154] "GET /static/admin/css/base.css HTTP/1.1" 200 16225 basehttp.py
+[22/May/2020 16:33:01] INFO [django.server:154] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423 basehttp.py
+[22/May/2020 16:33:01] INFO [django.server:154] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304 basehttp.py
+[22/May/2020 16:33:01] INFO [django.server:154] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348 basehttp.py
+[22/May/2020 16:33:16] INFO [django.server:154] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0 basehttp.py
+[22/May/2020 16:33:21] INFO [django.server:154] "GET /admin/ HTTP/1.1" 200 8776 basehttp.py
+[22/May/2020 16:33:21] INFO [django.server:154] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412 basehttp.py
+[22/May/2020 16:33:21] INFO [django.server:154] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331 basehttp.py
+[22/May/2020 16:33:21] INFO [django.server:154] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380 basehttp.py
+[22/May/2020 16:33:21] INFO [django.server:154] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564 basehttp.py
+[22/May/2020 16:33:21] INFO [django.server:154] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392 basehttp.py
+[22/May/2020 16:33:28] INFO [django.server:154] "GET /admin/sportsEquipment/ground/ HTTP/1.1" 200 4883 basehttp.py
+[22/May/2020 16:33:28] INFO [django.server:154] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170 basehttp.py
+[22/May/2020 16:33:28] INFO [django.server:154] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363 basehttp.py
+[22/May/2020 16:33:28] INFO [django.server:154] "GET /static/admin/js/core.js HTTP/1.1" 200 7135 basehttp.py
+[22/May/2020 16:33:28] INFO [django.server:154] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8972 basehttp.py
+[22/May/2020 16:33:28] INFO [django.server:154] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918 basehttp.py
+[22/May/2020 16:33:28] INFO [django.server:154] "GET /static/admin/js/actions.js HTTP/1.1" 200 6538 basehttp.py
+[22/May/2020 16:33:28] INFO [django.server:154] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751 basehttp.py
+[22/May/2020 16:33:29] INFO [django.server:154] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530 basehttp.py
+[22/May/2020 16:33:29] INFO [django.server:154] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820 basehttp.py
+[22/May/2020 16:33:30] INFO [django.server:154] "GET /admin/jsi18n/ HTTP/1.1" 200 3185 basehttp.py
+[22/May/2020 16:33:30] INFO [django.server:154] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331 basehttp.py
+[22/May/2020 16:43:52] ERROR [django.request:228] Internal Server Error: /admin/sportsEquipment/ground/ log.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/base.py", line 190, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/sites.py", line 212, in inner
+    if not self.has_permission(request):
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/sites.py", line 186, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 213, in inner
+    self._setup()
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 347, in _setup
+    self._wrapped = self._setupfunc()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/middleware.py", line 12, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 182, in get_user
+    user_id = _get_user_session_key(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/base.py", line 55, in __getitem__
+    return self._session[key]
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/base.py", line 195, in _get_session
+    self._session_cache = self.load()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+    expire_date__gt=timezone.now()
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 393, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 250, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/sql/compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: database is locked
+[22/May/2020 16:43:52] ERROR [django.request:228] Internal Server Error: /admin/sportsEquipment/ground/ log.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/base.py", line 190, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/sites.py", line 212, in inner
+    if not self.has_permission(request):
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/sites.py", line 186, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 213, in inner
+    self._setup()
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 347, in _setup
+    self._wrapped = self._setupfunc()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/middleware.py", line 12, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 182, in get_user
+    user_id = _get_user_session_key(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/base.py", line 55, in __getitem__
+    return self._session[key]
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/base.py", line 195, in _get_session
+    self._session_cache = self.load()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+    expire_date__gt=timezone.now()
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 393, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 250, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/sql/compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/sqlite3/base.py", line 298, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: database is locked
+[22/May/2020 16:43:52] ERROR [django.server:154] "GET /admin/sportsEquipment/ground/ HTTP/1.1" 500 204300 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /admin/sportsEquipment/ground/ HTTP/1.1" 200 4867 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/css/base.css HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/js/core.js HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/js/actions.js HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:43:58] INFO [django.server:154] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0 basehttp.py
+[22/May/2020 16:44:01] INFO [django.server:154] "GET /admin/jsi18n/ HTTP/1.1" 200 3185 basehttp.py
+[22/May/2020 16:44:01] INFO [django.server:154] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0 basehttp.py

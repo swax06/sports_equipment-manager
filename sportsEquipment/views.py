@@ -398,6 +398,15 @@ def update_penalty():
 			penaltyAmount = dailyPenalty * delta.days
 		userProfile.totalPenalty += penaltyAmount
 		insertOrUpdate(userProfile)
+	
+	#deleting all ground records
+	currentTime = datetime.today().astimezone(timezone('Asia/Kolkata'))
+	all_grounds = list(Ground.objects.order_by('gId'))
+	if(currentTime.hour==5 and currentTime.minute>=0 and currentTime.minute<=10):
+		for i in all_grounds:
+			i.booked = ";"
+			insertOrUpdate(i)
 
+	#print("dfgfgadagdaa",type(currentTime.minute))
 	#print("No of processed requests: ", len(lstProcessedRequest))
 	return
