@@ -23,7 +23,7 @@ from .serializers import *
 @login_required
 def home(request):
 	userProfile = UserProfileInfo.objects.get(user=request.user)
-	if request.user.is_superuser:
+	if request.user.is_staff:
 		return redirect(reverse('sportsEquipment:pendingRequest'))
 	else:
 		return redirect(reverse('sportsEquipment:viewRequest'))
@@ -110,6 +110,8 @@ def addEquip(request):
 			form.save()
 		return viewInventory(request)
 	else:
+		if(request.user.is_staff==False):
+			return redirect('/sportsEquipment/')
 		form = addEqpForm()
 		context ={
 			'form' : form,
@@ -288,19 +290,11 @@ def processReturnRequest(request):
 	returnRequest = EquipmentRequest.objects.get(reqId=reqId)
 	print(returnRequest)
 	currentTime = datetime.today()
-	dailyPenalty = settings.DAILY_PENALTY
-	delta = currentTime.date() - returnRequest.dtOfExpRet.date()
-	print("date of actual return")
-	print(currentTime)
-	print(delta.days)
-	penaltyAmount = 0
-	if (delta.days > 0):
-		penaltyAmount = dailyPenalty * delta.days
 	eqp = returnRequest.eqp
 	eqp.eqpQuantityTaken -= returnRequest.quantity
 	returnRequest.reqStatus    = 3
 	returnRequest.dtOfActualRet= currentTime
-	returnRequest.penalty      = penaltyAmount
+	returnRequest.penalty      = 0
 	insertOrUpdate(returnRequest)
 	insertOrUpdate(eqp)
 	# insertOrUpdate(UserProfileInfo)
@@ -316,6 +310,8 @@ def addGround(request):
 			form.save()
 		return viewInventory(request)
 	else:
+		if(request.user.is_staff==False):
+			return redirect('/sportsEquipment/')
 		form = addGroundForm()
 		context ={
 			'form' : form,
@@ -323,19 +319,85 @@ def addGround(request):
 		}
 		return render(request, "AdminUser/addGround.html",context)
 
+def check_time(sh,sm,eh,em):
+	if(eh<sh):
+		eh+=24
+	dh = eh-sh
+	if(em<sm):
+		dh-=1
+		dm = 60-abs(em-sm)
+	else:
+		dm = em-sm
+	dm += (dh*60)
+	if(dm>120):
+		return False
+	return True
+ 
+def check_ground_availability(s_tm,e_tm,booked):
+	for i in range(20):
+		print("fdsfdsds")
+	for i in booked:
+		print(type(i))
+		if(int(i[1])<=s_tm):
+			continue
+		elif(int(i[0])>=e_tm):
+			continue
+		else:
+			return False
+	return True
+
+
 
 def groundRequests(request):
 	userProfile = UserProfileInfo.objects.get(user=request.user)
 	if(request.method=="POST"):
-		pass
+		form = ground_form(request.POST)
+		groundtype = request.POST["groundtype"]
+		#print("dafafasasasfassafasasffsasf",groundtype)
+		current_ground = Ground.objects.get(gId=groundtype)
+		booked = [ x.split(',') for x in current_ground.booked.split(';') if x!='']
+		
+		sh = int(request.POST["start_hour"])
+		sm = int(request.POST["start_min"])
+		#print("daadffasafs",booked)
+		#s_tm = 1700
+		eh = int(request.POST["end_hour"])
+		em = int(request.POST["end_min"])
+		#print("end",end_tm)
+		if(check_time(sh,sm,eh,em)==False):
+			return HttpResponse("Cannot book the ground or court for more than 2 hrs")
+
+		if(check_ground_availability(sh*100 +sm,eh*100 +em,booked)):
+			#booked.append((sh*100 + sm,eh*100 +em))
+			current_ground.booked += str(sh*100 + sm) + "," + str(eh*100 + em) +";"
+			current_ground.save()
+			return redirect('/sportsEquipment/home')
+		else:
+			return HttpResponse("Gound not available")
+
 	else: 
 		form = ground_form()
 		return render(request, 'EndUser/g_request.html', {'form': form,'userProfile': userProfile})
 
 def update_penalty():
-	# lstProcessedRequest = list(EquipmentRequest.objects.filter(reqStatus__in = [1]).order_by('-dtOfRequest'))
-	# lstProcessedRequest = utcToIst(lstProcessedRequest)
-	# print(lstProcessedRequest)
-	# print("No of processed requests: ", len(lstProcessedRequest))
-	# #print("kota")
+	lstProcessedRequest = list(EquipmentRequest.objects.filter(reqStatus__in = [1]).order_by('-dtOfRequest'))
+	lstProcessedRequest = utcToIst(lstProcessedRequest)
+	for i in lstProcessedRequest:
+		#print(i.user)
+		user = i.user
+		userProfile = UserProfileInfo.objects.get(user=user)
+		#sprint(userProfile.totalPenalty)
+		dailyPenalty = settings.DAILY_PENALTY
+		currentTime = datetime.today()
+		delta = currentTime.date() - i.dtAvailed.date()
+		#print("date of actual return")
+		#print(currentTime)
+		#print(delta.days)
+		penaltyAmount = 0
+		if (delta.days > 0):
+			penaltyAmount = dailyPenalty * delta.days
+		userProfile.totalPenalty += penaltyAmount
+		insertOrUpdate(userProfile)
+
+	#print("No of processed requests: ", len(lstProcessedRequest))
 	return

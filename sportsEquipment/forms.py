@@ -31,15 +31,17 @@ class editForm(forms.ModelForm):
 			'eqpQuantity'
 		]
 
-class addGround(forms.ModelForm):
+class addGroundForm(forms.ModelForm):
 	class Meta:
 		model = Ground
 		fields = [
-				'gname'   ,
+				'gname',
 		]
 
 class ground_form(forms.Form):
 	lstGround = Ground.objects.all().order_by('gname')
-	gname = forms.ChoiceField(choices = [(lstGround.index(x),x.gname) for x in lstGround])
-	st_tm   = forms.TimeField()
-	end_tm  = forms.TimeField()
+	groundtype = forms.ChoiceField(choices = [(x.gId,x.gname) for x in lstGround])
+	start_hour   = forms.IntegerField(min_value=0, max_value=23)
+	start_min   = forms.IntegerField(min_value=0, max_value=59)
+	end_hour   = forms.IntegerField(min_value=0, max_value=23)
+	end_min   = forms.IntegerField(min_value=0, max_value=59)

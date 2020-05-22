@@ -14,6 +14,7 @@ app_name = 'sportsEquipment'
 # ]
 urlpatterns = [
     # Return view response
+    path('',views.home,name='home'),
     path('home/',views.home,name='home'),
     path(r'eqpRequest/',views.eqpRequest,name='eqpRequest'),
     path(r'pendingRequest/',views.pendingRequest,name='pendingRequest'),

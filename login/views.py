@@ -12,6 +12,8 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
+    if(request.user.is_authenticated):
+        return redirect('/sportsEquipment/')
     return render(request,'Login/index.html')
 
 @login_required

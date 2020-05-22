@@ -29,7 +29,7 @@
 
           <div class="collapse navbar-collapse" id="navbarsExample02">
 
-            {% if user.is_superuser %}
+            {% if user.is_staff %}
               <ul class="navbar-nav " style="margin-right: 900px">
               <li class="nav-item active">
                 <a class="nav-link" href="{% url 'sportsEquipment:pendingRequest' %}">Pending Request <span class="sr-only">(current)</span></a>

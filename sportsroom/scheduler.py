@@ -9,6 +9,6 @@ import sportsEquipment.views as views
 scheduler = BackgroundScheduler(settings.SCHEDULER_CONFIG)
 
 def start():
-	scheduler.add_job(views.update_penalty, 'interval', minutes=30)
+	scheduler.add_job(views.update_penalty, 'interval', seconds=5,misfire_grace_time=120)
 	register_events(scheduler)
 	scheduler.start() 

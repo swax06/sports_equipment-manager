@@ -19,12 +19,6 @@ class Equipments(models.Model):
 	def __str__(self):
 		return str(self.eqpId)+"@"+self.eqpName+"_"+str(self.eqpQuantity)
 
-class Ground(models.Model):
-	gname  = models.CharField(max_length=50)
-	booked = []
-
-	def __str__(self):
-		return str(self.gname)
 
 
 class EquipmentRequest(models.Model):
@@ -53,3 +47,20 @@ class addEquipments(models.Model):
 
 	def __str__(self):
 		return str(self.eqpId)+"@"+self.eqpName+"_"+str(self.eqpQuantity)
+
+
+class Ground(models.Model):
+	gId = models.AutoField(primary_key=True)
+	gname  = models.CharField(max_length=50)
+	booked = models.TextField(default=";")
+
+	def __str__(self):
+		a = str(self.gId)+"@"+ str(self.gname)+"_"+str(self.booked)
+		return a
+
+class addGround(models.Model):
+	gId = models.AutoField(primary_key=True)
+	gname  = models.CharField(max_length=50)
+	booked = []
+	def __str__(self):
+		return str(self.gId)+"@"+ str(self.gname)
