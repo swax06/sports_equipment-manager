@@ -380,33 +380,44 @@ def groundRequests(request):
 		return render(request, 'EndUser/g_request.html', {'form': form,'userProfile': userProfile})
 
 def update_penalty():
-	lstProcessedRequest = list(EquipmentRequest.objects.filter(reqStatus__in = [1]).order_by('-dtOfRequest'))
-	lstProcessedRequest = utcToIst(lstProcessedRequest)
-	for i in lstProcessedRequest:
-		#print(i.user)
-		user = i.user
-		userProfile = UserProfileInfo.objects.get(user=user)
-		#sprint(userProfile.totalPenalty)
-		dailyPenalty = settings.DAILY_PENALTY
-		currentTime = datetime.today()
-		delta = currentTime.date() - i.dtAvailed.date()
-		#print("date of actual return")
-		#print(currentTime)
-		#print(delta.days)
-		penaltyAmount = 0
-		if (delta.days > 0):
-			penaltyAmount = dailyPenalty * delta.days
-		userProfile.totalPenalty += penaltyAmount
-		insertOrUpdate(userProfile)
+	# print("ll")
+	# pass
+	# lstProcessedRequest = list(EquipmentRequest.objects.filter(reqStatus__in = [1]).order_by('-dtOfRequest'))
+	# lstProcessedRequest = utcToIst(lstProcessedRequest)
+	# for i in lstProcessedRequest:
+	# 	#print(i.user)
+	# 	usr = i.user
+	# 	#print("fafafafasafsafs      ",usr)
+	# 	userProfile = UserProfileInfo.objects.get(user= usr)
+	# 	#sprint(userProfile.totalPenalty)
+	# 	dailyPenalty = settings.DAILY_PENALTY
+	# 	currentTime = datetime.today()
+	# 	delta = currentTime.date() - i.dtAvailed.date()
+	# 	#print("date of actual return")
+	# 	#print(currentTime)
+	# 	#print(delta.days)
+	# 	penaltyAmount = 0
+	# 	if (delta.days > 0):
+	# 		penaltyAmount = dailyPenalty * delta.days
+	# 	userProfile.totalPenalty += penaltyAmount
+	# 	insertOrUpdate(userProfile)
 	
-	#deleting all ground records
-	currentTime = datetime.today().astimezone(timezone('Asia/Kolkata'))
-	all_grounds = list(Ground.objects.order_by('gId'))
-	if(currentTime.hour==5 and currentTime.minute>=0 and currentTime.minute<=10):
-		for i in all_grounds:
-			i.booked = ";"
-			insertOrUpdate(i)
+	# # #deleting all ground records
+	# currentTime = datetime.today().astimezone(timezone('Asia/Kolkata'))
+	# if(currentTime.hour==5 and currentTime.minute>=0 and currentTime.minute<=10):
+	# 	all_grounds = list(Ground.objects.order_by('gId'))
+	# 	for i in all_grounds:
+	# 		i.booked = ";"
+	# 		insertOrUpdate(i)
 
+	# #deleting unverified users
+	# if(currentTime.hour==5 and currentTime.minute>=0 and currentTime.minute<=10):
+	# 	pass	
+	# all_unverified = list(UserProfileInfo.objects.filter(is_verified=1))
+	# for i in all_unverified:
+	# 	print("fddfsds")
+	# 	print(i.user)
+		#i.delete()
 	#print("dfgfgadagdaa",type(currentTime.minute))
 	#print("No of processed requests: ", len(lstProcessedRequest))
 	return

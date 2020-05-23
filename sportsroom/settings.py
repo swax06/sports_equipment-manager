@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR,"templates")
@@ -28,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# DATABASE_OPTIONS = {'timeout': 30}
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,19 +42,28 @@ INSTALLED_APPS = [
     'rest_framework',
     # 'corsheaders',
     'login',
-    'sportsEquipment.apps.SportsEquipmentConfig',
-    'django_apscheduler', 
+    'sportsEquipment',
+    # 'django_apscheduler', 
 ]
 
-SCHEDULER_CONFIG = {
-    "apscheduler.jobstores.default": {
-        "class": "django_apscheduler.jobstores:DjangoJobStore"
-    },
-    'apscheduler.executors.processpool': {
-        "type": "threadpool"
-    },
-}
-SCHEDULER_AUTOSTART = True
+# CELERY STUFF
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Kolkata'
+
+
+# SCHEDULER_CONFIG = {
+#     "apscheduler.jobstores.default": {
+#         "class": "django_apscheduler.jobstores:DjangoJobStore"
+#     },
+#     'apscheduler.executors.processpool': {
+#         "type": "threadpool"
+#     },
+# }
+# SCHEDULER_AUTOSTART = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -102,6 +112,7 @@ DATABASES = {
     }
 }
 
+# DATABASE_OPTIONS = {'timeout': 30}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -152,7 +163,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'sportsroomiiitb2020@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'sports@room@iiitb'
 
 DAILY_PENALTY = 5
 RETURN_PERIOD = 1
