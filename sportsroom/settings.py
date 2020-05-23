@@ -163,7 +163,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'sportsroomiiitb2020@gmail.com'
-EMAIL_HOST_PASSWORD = 'sports@room@iiitb'
+EMAIL_HOST_PASSWORD = ''
 
 DAILY_PENALTY = 5
 RETURN_PERIOD = 1
